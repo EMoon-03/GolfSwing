@@ -17,10 +17,6 @@ Unzip the project folder and go into it:
 
     cd GolfSwing
 
-💡 Optional: Delete any existing __pycache__ folders:
-
-    rmdir /s /q __pycache__
-
 🌱 2. CREATE A VIRTUAL ENVIRONMENT
 (Recommended for dependency isolation)
 
@@ -78,10 +74,5 @@ Ensure the uploaded file is:
 You can start testing swing uploads and analyzing your mechanics.
 
 ---
-
-🧹 Optional Clean-Up:
-- Add `__pycache__/`, `.venv/`, and `.DS_Store` to `.gitignore`
-- Upload `requirements.txt` for other users
-- Add a `README.md` for project description
 
 
