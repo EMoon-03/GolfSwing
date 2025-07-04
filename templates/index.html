@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golf Swing Analyzer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            max-width: 900px;
+        }
+        h1 {
+            color: #2e7d32;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        select, input[type="file"], input[type="submit"] {
+            font-size: 1rem;
+            padding: 8px;
+            margin-top: 8px;
+            width: 100%;
+        }
+        pre {
+            background: #f3f3f3;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        video {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏌️ Golf Swing Analyzer</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="club">Select your club:</label><br>
+        <select name="club" id="club" required>
+            <option value="driver">Driver</option>
+            <option value="iron" selected>Iron</option>
+            <option value="wedge">Wedge</option>
+            <option value="putter">Putter</option>
+        </select><br><br>
+
+        <label for="file">Upload your swing video (.mp4):</label><br>
+        <input type="file" name="file" id="file" accept=".mp4" required><br><br>
+
+        <input type="submit" value="Upload and Analyze">
+    </form>
+
+    {% if analysis %}
+        <hr>
+        <h2>📊 Swing Analysis Report:</h2>
+        <pre>{{ analysis }}</pre>
+
+        <h2>🎥 Annotated Video:</h2>
+        <video controls>
+            <source src="{{ url_for('static', filename=video_file) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% endif %}
+</body>
+</html>
