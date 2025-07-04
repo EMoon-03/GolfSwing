@@ -36,14 +36,6 @@ Run the following command in the activated virtual environment:
 
     pip install flask opencv-python numpy mediapipe
 
-Or if using a `requirements.txt`:
-
-    pip install -r requirements.txt
-
-🛠 If you don’t have one yet, you can generate it later with:
-
-    pip freeze > requirements.txt
-
 ▶️ 4. RUN THE APPLICATION
 
 Start the Flask app:
@@ -63,7 +55,7 @@ If the console prints:
 
     ❌ Error: Could not open video.
 
-Ensure the uploaded file is:
+Make sure the uploaded file is:
 - A supported format (`.mp4`, `.mov`, etc.)
 - Not corrupted
 - Properly saved in the `uploads/` directory
